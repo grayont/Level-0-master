@@ -7,29 +7,25 @@ import javax.swing.JOptionPane;
 
 public class Code4Life {
 	public static void main(String[] args) {
-		
-	
-	
-	  //Ask the user how many hours they spent coding this week.
-	int hours = JOptionPane.showInputDialog("How many hours have you spent coding this week?");
-	  
-	   //If it's 3 or more, tell them they're a Code Ninja.
-	if (hours >= 3) {
-		JOptionPane.showMessageDialog(null, "You are a code ninja!");
+
+		// Ask the user how many hours they spent coding this week.
+		String hours = JOptionPane.showInputDialog("How many hours have you spent coding this week?");
+		int hour = Integer.parseInt(hours);
+
+		// If it's 3 or more, tell them they're a Code Ninja.
+		if (hour >= 5) {
+			playBatmanTheme();
+		}
+
+		// If it's less than 2, tell them to stop watching YouTube and write code instead.
+		else if (hour <= 2) {
+			JOptionPane.showMessageDialog(null, "Stop watching YouTube and write code instead.");
+		} else if (hour >= 3) {
+			JOptionPane.showMessageDialog(null, "You are a code ninja!");
+		}
 	}
-	  
-	   //If it's less than 2, tell them to stop watching YouTube and write code instead.
-	else if (hours < 2) {
-		JOptionPane.showMessageDialog(null, "Stop watching YouTube and write code instead.");
-	}
-	else if (hours > 5) {
-		playBatmanTheme();
-	}
-	}
-		
-	
-	   //If it's more than 5, play the Batman theme song.
-	 
+
+	// If it's more than 5, play the Batman theme song.
 
 	private static void playBatmanTheme() {
 		try {
@@ -42,6 +38,4 @@ public class Code4Life {
 			ex.printStackTrace();
 		}
 	}
-	}
-
-
+}
